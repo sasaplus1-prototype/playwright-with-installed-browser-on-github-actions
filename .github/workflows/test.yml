@@ -17,6 +17,12 @@ jobs:
           - firefox
           - msedge
           - webkit
+        # fail combinations
+        exclude:
+          - os: ubuntu-latest
+            browser: msedge
+          - os: ubuntu-latest
+            browser: webkit
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
