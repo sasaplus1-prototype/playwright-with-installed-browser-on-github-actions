@@ -9,5 +9,6 @@ test('basic test', async ({ page }) => {
   await page.keyboard.press('u');
   await page.keyboard.press('e');
   await page.keyboard.press('o');
+  await page.keyboard.press('あ');
   await page.screenshot({ path: `input.png`, fullPage: true });
 });
