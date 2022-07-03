@@ -43,6 +43,9 @@ jobs:
         if: matrix.browser == 'firefox' || matrix.browser == 'webkit'
       - run: npx playwright test --project=${{ matrix.browser }}
       - run: mv example.png example-${{ runner.os }}-${{ matrix.browser }}.png
+      - run: mv input.png input-${{ runner.os }}-${{ matrix.browser }}.png
       - uses: actions/upload-artifact@v3
         with:
-          path: example-${{ runner.os }}-${{ matrix.browser }}.png
+          path: |
+            example-${{ runner.os }}-${{ matrix.browser }}.png
+            input-${{ runner.os }}-${{ matrix.browser }}.png
